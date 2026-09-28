@@ -57,7 +57,7 @@ def main():
         response = tokenizer.decode(generated_tokens, skip_special_tokens=True)
         print(response)
         coords = ast.literal_eval(response.replace("<|im_end|>", "").replace("```", "").replace(" ", "").strip())
-        image = draw_coord(Image.open("examples/aria.png"), coords)
+        image = draw_coord(Image.open("examples/aria.png", coords)
         image.save("output.png")
 
 
